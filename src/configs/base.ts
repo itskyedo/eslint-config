@@ -734,17 +734,7 @@ function tsConfig(options: ConfigOptions): Linter.Config[] {
 }
 
 export default function baseConfig(options: ConfigOptions): Linter.Config[] {
-  const config: Linter.Config[] = [
-    {
-      ignores: [
-        '**/node_modules/**/*',
-        '**/dist/**/*',
-        '**/build/**/*',
-        '**/coverage/**/*',
-      ],
-    },
-    ...jsConfig(options),
-  ];
+  const config: Linter.Config[] = jsConfig(options);
 
   if (options.typescript) {
     config.push(...tsConfig(options));
