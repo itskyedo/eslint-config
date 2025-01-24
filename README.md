@@ -40,12 +40,12 @@ npm install -D @itskyedo/eslint-config
 
 Initializes the ESLint config.
 
-| Parameter            | Type                  | Description                                     |
-| :------------------- | :-------------------- | :---------------------------------------------- |
-| **options**          | `ConfigOptions`       | The customizable options.                       |
-| **...customConfigs** | `Linter.FlatConfig[]` | Additional configuration objects and overrides. |
+| Parameter            | Type              | Description                                     |
+| :------------------- | :---------------- | :---------------------------------------------- |
+| **options**          | `ConfigOptions`   | The customizable options.                       |
+| **...customConfigs** | `Linter.Config[]` | Additional configuration objects and overrides. |
 
-**Returns**: `Linter.FlatConfig[]` An ESLint flat config array.
+**Returns**: `Linter.Config[]` An ESLint flat config array.
 
 ### `interface ConfigOptions`
 

@@ -6,9 +6,7 @@ import promisePlugin from 'eslint-plugin-promise';
 import { type ConfigOptions } from '../index';
 import { getOverrides } from '../utils';
 
-export default function promiseConfig(
-  options: ConfigOptions
-): Linter.FlatConfig[] {
+export default function promiseConfig(options: ConfigOptions): Linter.Config[] {
   const rules: Partial<Linter.RulesRecord> = {
     'promise/always-return': 'off',
   };
