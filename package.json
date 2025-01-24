@@ -1,6 +1,6 @@
 {
   "name": "@itskyedo/eslint-config",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "Kyedo <hey@kyedo.dev> (https://github.com/itskyedo)",
   "description": "An opinionated configuration for ESLint.",
   "license": "MIT",
