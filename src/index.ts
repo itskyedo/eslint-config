@@ -1,6 +1,7 @@
 import { type Linter } from 'eslint';
 
 import baseConfig from './configs/base';
+import ignoresConfig, { type IgnoresConfigOption } from './configs/ignores';
 import importConfig from './configs/import';
 import jsdocConfig from './configs/jsdoc';
 import prettierConfig from './configs/prettier';
@@ -10,6 +11,7 @@ import stylisticConfig from './configs/stylistic';
 
 export interface ConfigOptions {
   library: boolean;
+  ignores?: IgnoresConfigOption;
   base?: Partial<Linter.RulesRecord>;
   typescript: boolean | Partial<Linter.RulesRecord>;
   jsdoc: boolean | Partial<Linter.RulesRecord>;
@@ -31,7 +33,10 @@ export default function createConfig(
   options: ConfigOptions,
   ...customConfigs: Linter.Config[]
 ): Linter.Config[] {
-  const configs: Linter.Config[] = baseConfig(options);
+  const configs: Linter.Config[] = [
+    ...ignoresConfig(options),
+    ...baseConfig(options),
+  ];
 
   if (options.jsdoc) {
     configs.push(...jsdocConfig(options));

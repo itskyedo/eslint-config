@@ -52,6 +52,7 @@ Initializes the ESLint config.
 | Property       | Type                                     | Description                                         | Link                                                                               |
 | :------------- | :--------------------------------------- | :-------------------------------------------------- | :--------------------------------------------------------------------------------- |
 | **library**    | `boolean`                                | Whether to use the recommended rules for libraries. |                                                                                    |
+| **ignores?**   | `boolean \| IgnoresConfigOption`         | Additional ignores configuration.                   |                                                                                    |
 | **base?**      | `Partial<Linter.RulesRecord>`            | Overrides for the default base rules.               | [eslint](https://eslint.org/docs/latest/rules/)                                    |
 | **typescript** | `boolean \| Partial<Linter.RulesRecord>` | Overrides for the default TypeScript rules          | [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)        |
 | **jsdoc**      | `boolean \| Partial<Linter.RulesRecord>` | Overrides for the default JSDoc rules.              | [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc)                |
@@ -60,6 +61,15 @@ Initializes the ESLint config.
 | **sort**       | `boolean \| Partial<Linter.RulesRecord>` | Overrides for the default sort rules.               | [eslint-plugin-sort](https://github.com/eslint-community/eslint-plugin-promise)    |
 | **stylistic**  | `boolean \| Partial<Linter.RulesRecord>` | Overrides for the default stylistic rules.          | [eslint-stylistic](https://github.com/eslint-stylistic/eslint-stylistic)           |
 | **prettier**   | `boolean \| Partial<Linter.RulesRecord>` | Overrides for the default prettier rules.           | [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)       |
+
+### `interface IgnoresConfigOption`
+
+The configuration settings for `ignores`.
+
+| Parameter      | Type                                           | Description                                                                                                                    |
+| :------------- | :--------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------- |
+| **globs**      | `string[]`                                     | The customizable options.                                                                                                      |
+| **gitignore?** | `boolean \| { cwd: string }` (_default: true_) | Whether to ignore all globs listed in the project's `.gitignore`. Optionally, pass in an object to specify additional options. |
 
 ---
 
