@@ -4,9 +4,7 @@ import sort from 'eslint-plugin-sort';
 import { type ConfigOptions } from '../index';
 import { getOverrides } from '../utils';
 
-export default function sortConfig(
-  options: ConfigOptions
-): Linter.FlatConfig[] {
+export default function sortConfig(options: ConfigOptions): Linter.Config[] {
   const objectRules: Partial<Linter.RulesRecord> = {
     // Sorts object destructuring properties
     'sort/destructuring-properties': 'error',

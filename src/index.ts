@@ -29,9 +29,9 @@ export interface ConfigOptions {
  */
 export default function createConfig(
   options: ConfigOptions,
-  ...customConfigs: Linter.FlatConfig[]
-): Linter.FlatConfig[] {
-  const configs: Linter.FlatConfig[] = baseConfig(options);
+  ...customConfigs: Linter.Config[]
+): Linter.Config[] {
+  const configs: Linter.Config[] = baseConfig(options);
 
   if (options.jsdoc) {
     configs.push(...jsdocConfig(options));

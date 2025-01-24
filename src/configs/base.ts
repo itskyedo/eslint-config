@@ -30,7 +30,7 @@ function replaceBaseRule(
   };
 }
 
-function jsConfig(options: ConfigOptions): Linter.FlatConfig[] {
+function jsConfig(options: ConfigOptions): Linter.Config[] {
   const bestPracticeRules: Partial<Linter.RulesRecord> = {
     // Enforces getter/setter pairs in objects
     'accessor-pairs': 'off',
@@ -543,7 +543,7 @@ function jsConfig(options: ConfigOptions): Linter.FlatConfig[] {
   ];
 }
 
-function tsConfig(options: ConfigOptions): Linter.FlatConfig[] {
+function tsConfig(options: ConfigOptions): Linter.Config[] {
   const tsConfigRules: Partial<Linter.RulesRecord> = {
     camelcase: 'off',
     'no-dupe-args': 'off',
@@ -730,13 +730,11 @@ function tsConfig(options: ConfigOptions): Linter.FlatConfig[] {
       ...stylisticRules,
       ...getOverrides(options.typescript),
     },
-  }) as Linter.FlatConfig[];
+  }) as Linter.Config[];
 }
 
-export default function baseConfig(
-  options: ConfigOptions
-): Linter.FlatConfig[] {
-  const config: Linter.FlatConfig[] = [
+export default function baseConfig(options: ConfigOptions): Linter.Config[] {
+  const config: Linter.Config[] = [
     {
       ignores: [
         '**/node_modules/**/*',

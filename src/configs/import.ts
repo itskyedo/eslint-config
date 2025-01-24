@@ -5,9 +5,7 @@ import importPlugin from 'eslint-plugin-import-x';
 import { type ConfigOptions } from '../index';
 import { getOverrides } from '../utils';
 
-export default function importConfig(
-  options: ConfigOptions
-): Linter.FlatConfig[] {
+export default function importConfig(options: ConfigOptions): Linter.Config[] {
   const staticAnalysisRules: Partial<Linter.RulesRecord> = {
     // Reports use of a default export as a locally named import.
     'import-x/no-named-default': 'error',
@@ -76,8 +74,8 @@ export default function importConfig(
     'import-x/no-anonymous-default-export': 'error',
   };
 
-  const config: Linter.FlatConfig[] = [
-    importPlugin.flatConfigs.recommended as Linter.FlatConfig,
+  const config: Linter.Config[] = [
+    importPlugin.flatConfigs.recommended as Linter.Config,
   ];
 
   if (options.typescript) {

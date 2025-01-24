@@ -4,9 +4,7 @@ import jsdoc from 'eslint-plugin-jsdoc';
 import { type ConfigOptions } from '../index';
 import { getOverrides } from '../utils';
 
-export default function jsdocConfig(
-  options: ConfigOptions
-): Linter.FlatConfig[] {
+export default function jsdocConfig(options: ConfigOptions): Linter.Config[] {
   const rules: Partial<Linter.RulesRecord> = {
     'require-jsdoc': 'off',
     'jsdoc/require-description-complete-sentence': 'error',

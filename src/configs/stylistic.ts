@@ -6,7 +6,7 @@ import { getOverrides } from '../utils';
 
 export default function stylisticConfig(
   options: ConfigOptions
-): Linter.FlatConfig[] {
+): Linter.Config[] {
   const rules: Partial<Linter.RulesRecord> = {};
 
   return [

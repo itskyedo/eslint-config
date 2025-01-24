@@ -5,8 +5,8 @@ declare module 'eslint-plugin-promise' {
     rules: Linter.RulesRecord;
     rulesConfig: Record<string, number>;
     configs: {
-      recommended: Linter.FlatConfig;
-      'flat/recommended': Linter.FlatConfig;
+      recommended: Linter.Config;
+      'flat/recommended': Linter.Config;
     };
   };
 
